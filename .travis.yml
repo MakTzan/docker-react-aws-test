@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t maktzan/docker-react-aws-test -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true maktzan/docker-react-aws-test npm run test
