@@ -10,4 +10,5 @@ RUN npm run build
 #This is the run phase
 #We take the output of the build phase , copy it to the nginx container and run nginx
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
